@@ -44,7 +44,7 @@ def main [] {
     # Let user select a tab
     let selected = (
         $tabs 
-        | input list --fuzzy "Select a Safari tab"
+        | input list --fuzzy $"(ansi light_cyan)Select a Safari tab(ansi reset)"
     )
     
     if (
@@ -63,6 +63,6 @@ def main [] {
         osascript -e $"tell application \"Safari\" to set current tab of front window to tab ($index) of front window"
         osascript -e "tell application \"Safari\" to activate"
         
-        print $"Switched to tab: ($selected)"
+        print $"(ansi light_green)Switched to tab:(ansi reset) ($selected)"
     }
 }
