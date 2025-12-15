@@ -10,7 +10,7 @@
     {
       self,
       nixpkgs,
-      flake-compat,
+      flake-compat, # not used in flake.nix - used by default.nix via flake.lock
     }:
     let
       supportedSystems = [
